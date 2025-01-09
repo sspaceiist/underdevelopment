@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/satellite.js/dist/satellite.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<style>
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #map {
+        width: 100%;
+        height: 100%;
+    }
+
+    .marker-pin {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    background: #c30b82;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+    }
+    .marker-pin::after {
+        content: '';
+        width: 24px;
+        height: 24px;
+        margin: 3px 0 0 3px;
+        background: #fff;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .custom-div-icon i {
+    position: absolute;
+    width: 22px;
+    font-size: 22px;
+    left: 0;
+    right: 0;
+    margin: 10px auto;
+    text-align: center;
+    }
+</style>
+
+<body>
+    <div id="map"></div>
+</body>
+
+<script>
+    function getLatLongOfGRACE(tleLine1, tleLine2, date = new Date()) {
+        const satrec = satellite.twoline2satrec(tleLine1, tleLine2);
+        const positionAndVelocity = satellite.propagate(satrec, date);
+        if (!positionAndVelocity.position) {
+        throw new Error('Error calculating satellite position.');
+        }
+        const positionEci = positionAndVelocity.position;
+        const gmst = satellite.gstime(date);
+        const geodeticCoords = satellite.eciToGeodetic(positionEci, gmst);
+        const latitude = satellite.degreesLat(geodeticCoords.latitude);
+        const longitude = satellite.degreesLong(geodeticCoords.longitude);
+        return [latitude, longitude];
+    }
+
+    function updateMarkerFromTLE(tleLine1, tleLine2, map, interval = 1000) {
+    const satrec = satellite.twoline2satrec(tleLine1, tleLine2);
+    const initialPosition = getLatLongOfGRACE(tleLine1, tleLine2, new Date());
+    const satIcon = L.divIcon({
+      className: 'custom-icon',
+      html: '<i class="bi bi-send-fill" style="font-size: 24px; color: red;"></i>',
+      iconSize: [24, 24],
+      iconAnchor: [12, 24],
+    });
+    const marker = L.marker(initialPosition, {icon: satIcon}).addTo(map);
+    setInterval(() => {
+        try {
+        const latLong = getLatLongOfGRACE(tleLine1, tleLine2, new Date());
+        marker.setLatLng(latLong);
+        } catch (error) {
+        console.error('Error updating marker position:', error.message);
+        }
+    }, interval);
+
+    return marker;
+    }
+
+    const tleLine1 = '1 62461U 24253C   25009.26173677  .00065784  00000+0  46879-3 0  9996';
+    const tleLine2 = '2 62461  55.2205 209.2082 0003525 283.8702  76.1952 15.73274472  1494';
+    const date = new Date();
+
+    var map = L.map('map', { attributionControl: false }).setView([8.6254, 77.0341], 3);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    icon = L.divIcon({
+        className: 'custom-div-icon',
+        html: "<div style='background-color:#4838cc;' class='marker-pin'></div><i class='bi bi-broadcast-pin' style='margin-top: 5px;'></i>",
+        iconSize: [30, 42],
+        iconAnchor: [15, 42]
+    });
+    var marker = L.marker([8.6254, 77.0341], { icon: icon }).addTo(map);
+    var popup = L.popup()
+        .setLatLng([8.6254, 77.0341])
+        .setContent("SSPACE GRASP")
+        .openOn(map);
+    updateMarkerFromTLE(tleLine1, tleLine2, map, 1000);
+</script>
+
+</html>
