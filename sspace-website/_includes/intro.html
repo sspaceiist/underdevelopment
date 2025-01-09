@@ -1,0 +1,38 @@
+<div class="bg-black">
+    <div class="h-[100vh] w-full flex flex-col justify-center items-center group">
+        <h1 style="font-family: 'Source Sans 3'; font-weight:900;" class="text-yellow-500 text-5xl">
+            WE ARE
+        </h1>
+        <h1 style="font-family: 'Source Sans 3'; font-weight:900;"
+            class="text-white text-8xl group-hover:text-[10.2rem] transition-all duration-300 text-center relative">
+            SSPACE
+            <span class="border-animation"></span>
+        </h1>
+        <h1 style="font-family: 'Source Sans 3'; font-weight:900;" class="text-black text-md group-hover:text-white group-hover:text-2xl transition-all duration-300">
+            SMALL-SPACECRAFT SYSTEMS AND PAYLOAD CENTER
+        </h1>
+        
+    </div>
+</div>
+
+<style>
+    .relative {
+        position: relative;
+    }
+
+    .border-animation {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #f59e0b;
+        transition: width 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .group:hover .border-animation {
+        width: 100%;
+    }
+</style>
