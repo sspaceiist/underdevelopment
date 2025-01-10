@@ -1,6 +1,6 @@
-<div class="bg-black flex pt-[10vh]">
-    <div class="h-[90vh] w-full flex flex-col justify-center items-center group ">
-        <h1 style="font-family: 'Source Sans 3'; font-weight:900;" class="text-yellow-500 text-5xl">
+<div class="flex pt-[10vh]">
+    <div class="h-[90vh] w-full flex flex-col justify-center items-center group">
+        <h1 style="font-family: 'Source Sans 3'; font-weight:900;" class="text-yellow-500 text-5xl" id="aaa">
             WE ARE
         </h1>
         <h1 style="font-family: 'Source Sans 3'; font-weight:900;"
@@ -8,10 +8,11 @@
             SSPACE
             <span class="border-animation"></span>
         </h1>
-        <h1 style="font-family: 'Source Sans 3'; font-weight:900;" class="text-black text-md group-hover:text-white group-hover:text-2xl transition-all duration-300">
+        <h1 style="font-family: 'Source Sans 3'; font-weight:900;"
+            class="text-black text-md group-hover:text-white group-hover:text-2xl transition-all duration-300">
             SMALL-SPACECRAFT SYSTEMS AND PAYLOAD CENTER
         </h1>
-        
+
     </div>
 </div>
 
@@ -36,3 +37,32 @@
         width: 100%;
     }
 </style>
+
+
+<script>
+    // Function to check if element1 is in the viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top >= 0 && rect.top <= window.innerHeight * 0.5; // Check if 50% of element is in view
+    }
+
+    // Function to handle scroll event
+    function onScroll() {
+        const element1 = document.getElementById('element1'); // Get element1
+        const element2 = document.getElementById('element2'); // Get element2
+
+        // Check if element1 is in the viewport
+        if (isElementInViewport(element1)) {
+            element2.classList.add('active'); // Add class to element2 if element1 is in the viewport
+        } else {
+            element2.classList.remove('active'); // Remove class if element1 is not in the viewport
+        }
+    }
+
+    // Listen for scroll event
+    window.addEventListener('scroll', onScroll);
+
+    // Initial check in case the page is already scrolled
+    onScroll();
+
+</script>
