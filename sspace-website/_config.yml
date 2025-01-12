@@ -3,7 +3,7 @@ email: sspace.iist@gmail.com
 description: >- 
   for sspace website
 baseurl: ""
-url: ""
+url: "http://abhishek-arch.local:8000"
 twitter_username: jekyllrb
 github_username:  jekyll
 
