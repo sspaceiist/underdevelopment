@@ -15,6 +15,20 @@
 </head>
 
 <style>
+    @font-face {
+    font-family: "Technology";
+    src: url(fonts/Technology.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Roblox";
+    src: url(fonts/Roblox-Font-Regular.ttf) format("truetype");
+    font-weight: normal;
+  }
+  @font-face {
+    font-family: "Roblox";
+    src: url(fonts/Roblox-Font-Bold.ttf) format("truetype");
+    font-weight: bold;
+  }
     html {
         width: 100%;
         height: 100%;
@@ -62,7 +76,8 @@
     .navbar {
         
   overflow: hidden;
-  background-image: url(https://wallpapercave.com/wp/wp7137375.jpg);
+  background-color: black;
+  background-image: url(sspace-website\image\background.jpg) ;
   position: absolute;
   
   width: 100%;
@@ -122,7 +137,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50% 50% 50% 0;
-    background: #c30b82;
+    background: black;
     position: absolute;
     transform: rotate(-45deg);
     left: 50%;
@@ -134,9 +149,22 @@
         width: 24px;
         height: 24px;
         margin: 3px 0 0 3px;
-        background: #fff;
         position: absolute;
         border-radius: 50%;
+        
+    }
+    .marker-pin-img{
+        width: 28px;
+    height: 28px;
+    border-radius: 50% 50% 50% 0;
+    background-image:url('file.png');
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+    z-index:1000;
+
     }
 
     .custom-div-icon i {
@@ -182,10 +210,10 @@
         .table-container {
             position: fixed; /* Fix the table in the window */
             bottom: 20px; /* 20px from the bottom */
-            right: 20px; /* 20px from the right */
+            right: 10px; /* 20px from the right */
             width: auto; /* Set a fixed width for the table */
             background-color: #fff; /* White background for the table */
-            border: 2px solid #2574db; /* Border color */
+            border: 2px solid black; /* Border color */
             border-radius: 8px; /* Rounded corners */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
             display: none; /* Hide the table initially */
@@ -206,7 +234,7 @@
             text-align: center;
         }
         th {
-            background-color: #2574db;
+            background-color: black;
             color: white;
         }
 
@@ -228,12 +256,15 @@
                 display: none; /* Keep text hidden on hover for small screens */
             }
         }
+        img.icon {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg);
+        }
 
 </style>
 
 <body>
     <div class="top-box">
-        <span id="datetime"></span>
+        <span id="datetime" style="font-family: 'Roblox';"></span>
     </div>
     <div id="map"></div>
     <div class="navbar" style="bottom: 0;">
@@ -241,17 +272,17 @@
         
       </div>
       <div class="image-container">
-        <img src="isro.png" class="fixed-size-image">
-        <img src="IIST_LOGO.png" class="fixed-size-image">
-        <img src="file.png" class="fixed-size-image">
-        <img src="grace.png" class="fixed-size-image" style="background-color: black;padding: 2px 2px;width:35px;height:35px;">
+        <img src="sspace-website\image\isro.png" class="fixed-size-image">
+        <img src="sspace-website\image\IIST_LOGO.png" class="fixed-size-image">
+        <img src="sspace-website\image\file.png" class="fixed-size-image">
+        <img src="sspace-website\image\grace_new.png" class="fixed-size-image">
 
     </div>
     <button class="show-button" onclick="toggleTable()">
         <span class="button-icon">
             <img src="https://images.emojiterra.com/google/android-12l/512px/1f6f0.png" alt="Table Icon" style="height:23px;width:23px;">
         </span>
-        <span class="button-text">Future Passes</span>
+        <span class="button-text" style="padding:5px 5px;">Future Passes</span>
     </button>
     <div class="table-container" id="tableContainer">
         <table>
@@ -291,7 +322,7 @@
     const initialPosition = getLatLongOfGRACE(tleLine1, tleLine2, new Date());
     const satIcon = L.divIcon({
       className: 'custom-icon',
-      html: '<i class="bi bi-send-fill" style="font-size: 24px; color: red;"></i>',
+      html: ' <img class="icon" src="grace.svg" style="height:45px;width:45px;"alt="Icon">',
       iconSize: [24, 24],
       iconAnchor: [12, 24],
     });
@@ -319,7 +350,7 @@
     }).addTo(map);
     icon = L.divIcon({
         className: 'custom-div-icon',
-        html: "<div style='background-color:#4838cc;' class='marker-pin'></div><i class='bi bi-broadcast-pin' style='margin-top: 5px;'></i>",
+        html: "<div style='background-image:url(file.png);' class='marker-pin'></div><div class='marker-pin-img'><img src='https://sspace-iist-old.vercel.app/static/media/logo.8a69e042.gif' style='height:30px;width:30px;'></div>",
         iconSize: [30, 42],
         iconAnchor: [15, 42]
     });
@@ -328,6 +359,7 @@
         .setLatLng([8.6254, 77.0341])
         .setContent("SSPACE GRASP")
         .openOn(map);
+        
     updateMarkerFromTLE(tleLine1, tleLine2, map, 1000);
 
     function toggleTable() {
