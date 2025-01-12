@@ -1,0 +1,12 @@
+<section>
+    <h2>Students</h2>
+    <div class="students-container">
+        {% for student in site.students %}
+        <div class="student">
+            <p class="student-name">{{ student.name }}</p>
+            <p class="student-role">{{ student.role }}</p>
+            <img src="{{ site.url }}/images/students/{{ student.image }}" alt="{{ student.name }}" class="student-image">
+        </div>
+        {% endfor %}
+    </div>
+</section>

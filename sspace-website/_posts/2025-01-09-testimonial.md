@@ -1,5 +1,5 @@
 ---
-layout: missionss
+layout: mission
 title : mm
 ---
 # Testimonials
