@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient with Manual Testimonial Navigation</title>
+    <style>
+        /* Basic body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Create the center-to-corner gradient background */
+        .gradient-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;  /* Full viewport height */
+            background: radial-gradient(circle, rgba(255, 204, 0, 1) 0%, rgb(7, 7, 7) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Style for the testimonials container */
+        .testimonials-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Individual testimonial styles */
+        .testimonial {
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            padding: 20px;
+            margin: 0 10px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: justify;
+            font-size: 18px;
+            display: none; /* Hide all testimonials initially */
+        }
+
+        .testimonial p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        .testimonial .author {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Navigation buttons (left and right arrows) */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            padding: 10px;
+            border: 2px;
+        
+            border-color: black;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+            z-index: 1;
+            width: 50px;  /* Fixed width */
+            height: 50px; /* Fixed height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Gradient Container with Testimonials on top -->
+    <div class="gradient-container">
+        <div class="testimonials-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial">
+                <p>"I can confidently say that joining SSPACE has been one of the best decisions I’ve made in IIST. My three years’ work there have given me a comprehensive exposure to the aerospace industry in India and elsewhere.
+                    "</p>
+                <div class="author">Surya S Kalluri
+
+                    -Scientist/Engineer, ISRO</div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial">
+                <p>"Working on the satellite projects at IIST has been an immense learning experience academically. Till date, I have found these knowledge very useful in daily applications at my current work place."</p>
+                <div class="author">Niwhashini O N
+
+                    — Sci/Eng SC, U.R.S.C, ISRO, Bangalore</div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="testimonial">
+                <p>""SSPACE is a place where you can challenge yourself with engineering problems from various disciplines, with an emphasis on small satellite systems and science payloads.""</p>
+                <div class="author">Mallikarjun Kompella
+
+                    — Scientist/Engineer, ISRO</div>
+            </div>
+            <!-- Testimonial 4 -->
+            <div class="testimonial">
+                <p>"Working at SSPACE was a very enjoyable experience. By contributing to different SSPACE projects, I gained immense exposure to small-spacecraft systems engineering and was given the opportunity to learn from international domain experts."</p>
+                <div class="author">Anant Kumar
+
+                    — Scientist/Engineer, ISRO</div>
+            </div>
+            <div class="testimonial">
+                <p>"Designing and realizing OBC for IIST NanoSatellite was great opportunity for me to learn about embedded systems. It was both rewarding and challenging as it was a platform to apply the topics learnt over the course and tackle several practical problems."</p>
+                <div class="author">Paul Antony
+
+                    — Sci/Engr SD, VSSC</div>
+            </div>
+            <div class="testimonial">
+                <p>" I'd been with SSPACE since my second year at IIST. All along, it taught me everything from project management skills, collaborations and teamwork. "
+                </p>
+                <div class="author">Ansuman Palo
+
+                    — Scientist/Engineer, ISRO</div>
+            </div>
+
+        </div>
+        <!-- Previous and Next buttons -->
+        <button class="prev"><img style="transform: rotate(270deg);height: 30px;width:30px;" src="https://png.pngtree.com/png-vector/20220519/ourmid/pngtree-white-triangle-shape-realistic-button-png-image_4689259.png"></button>
+        <button class="next"><img style="transform: rotate(90deg);height: 30px;width:30px;" src="https://png.pngtree.com/png-vector/20220519/ourmid/pngtree-white-triangle-shape-realistic-button-png-image_4689259.png"></button>
+    </div>
+
+    <script>
+        // Get all the testimonials and buttons
+        const testimonials = document.querySelectorAll('.testimonial');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        
+        let currentIndex = 0;
+
+        // Function to display the current testimonial
+        function showTestimonial(index) {
+            // Hide all testimonials
+            testimonials.forEach((testimonial, i) => {
+                testimonial.style.display = 'none';
+            });
+
+            // Show the current testimonial
+            testimonials[index].style.display = 'block';
+        }
+
+        // Show the first testimonial by default
+        showTestimonial(currentIndex);
+
+        // Event listener for the "Previous" button
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+            showTestimonial(currentIndex);
+        });
+
+        // Event listener for the "Next" button
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+            showTestimonial(currentIndex);
+        });
+    </script>
+
+</body>
+</html>
