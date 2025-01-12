@@ -370,6 +370,31 @@
                 tableContainer.style.display = 'none'; // Hide the table
             }
         }
+        function plotSatellitePath() {
+        var satrec = satellite.twoline2satrec(tleLine1, tleLine2);
+
+        var pathCoordinates = [];
+        for (var i = 0; i < 3600; i += 30) { // Calculate every 30 seconds for 1 hour
+            var now = new Date();
+            now.setSeconds(now.getSeconds() + i);
+            
+            // Get satellite position for the given time
+            var positionAndVelocity = satellite.propagate(satrec, now);
+            if (positionAndVelocity) {
+                var positionEci = positionAndVelocity.position;
+
+// Convert ECI (Earth Centered Inertial) to Lat/Lon
+var positionGd = satellite.eciToGeodetic(positionEci, now);
+var lat = positionGd.latitude * (180 / Math.PI); // Convert radians to degrees
+var lon = positionGd.longitude * (180 / Math.PI); // Convert radians to degrees
+
+pathCoordinates.push([lat, lon]); // Add to path coordinates array
+}
+}
+
+// Plot the satellite path on the map
+L.polyline(pathCoordinates, { color: 'red' }).addTo(map); // Draw the satellite path
+}
     function updateDateTime() {
         
         const now = new Date();
