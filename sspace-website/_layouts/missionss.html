@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ywx0zsk.css">
+</head>
+
+<body 
+    class="bg-[url('{{site.url}}/image/background.jpg')] bg-cover bg-fixed bg-center h-screen">
+    {% include navbar.html %}
+    <div class="h-[10vh]">a</div>
+    <h1 class="text-9xl text-green-500">Missions:</h1>
+    <div class="flex">
+        <div class="flex flex-col text-white justify-center w-1/2 pl-8 py-8 gap-6">
+            <a href="#"
+                class="text-4xl pb-3 pl-4 rounded-l-xl transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">INSPIRESAT 1</a>
+            <a href="#objss"
+                class="text-4xl pb-3 pl-4 rounded-l-xl transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">PILOT</a>
+            <a href="#"
+                class="text-4xl pb-3 pl-4 rounded-l-xl transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]"></a>
+            <a href="#"
+                class="text-4xl pb-3 pl-4 rounded-l-xl transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">ISO</a>
+            <a href="#"
+                class="text-4xl pb-3 pl-4 rounded-l-xl transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">ISAT 2</a>
+
+        </div>
+        <div>
+            
+        </div>
+    </div>
+    {% include footer.html %}
+</body>
+
+</html>
