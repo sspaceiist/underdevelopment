@@ -21,7 +21,7 @@
             const loader = new THREE.GLTFLoader();
             let model;
 
-            const modelPath = container.getAttribute('data-model-path');
+            const modelPath = container.getAttribute('{{site.url}}/models/2.glb');
 
             loader.load(
                 modelPath, // Path to the model
