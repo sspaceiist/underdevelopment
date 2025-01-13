@@ -1,12 +1,141 @@
-<section>
-    <h2>Students</h2>
-    <div class="students-container">
-        {% for student in site.students %}
-        <div class="student">
-            <p class="student-name">{{ student.name }}</p>
-            <p class="student-role">{{ student.role }}</p>
-            <img src="{{ site.url }}/images/students/{{ student.image }}" alt="{{ student.name }}" class="student-image">
+<section id="teammm">
+    <div class="flex justity-center items-center w-full flex-col py-16">
+        <script>
+            function showAlumini(){
+                document.getElementById('alumini').style.display='block';
+                document.getElementById('students').style.display='none';
+                document.getElementById('projectFellow').style.display='none';
+                document.getElementById('faculty').style.display='none';
+                document.getElementById('reviewNmenotr').style.display='none';
+            }
+            function showStudents(){
+                document.getElementById('alumini').style.display='none';
+                document.getElementById('students').style.display='block';
+                document.getElementById('projectFellow').style.display='none';
+                document.getElementById('faculty').style.display='none';
+                document.getElementById('reviewNmenotr').style.display='none';
+            }
+            function showProjectFellow(){
+                document.getElementById('alumini').style.display='none';
+                document.getElementById('students').style.display='none';
+                document.getElementById('projectFellow').style.display='block';
+                document.getElementById('faculty').style.display='none';
+                document.getElementById('reviewNmenotr').style.display='none';
+            }
+            function showFaculty(){
+                document.getElementById('alumini').style.display='none';
+                document.getElementById('students').style.display='none';
+                document.getElementById('projectFellow').style.display='none';
+                document.getElementById('faculty').style.display='block';
+                document.getElementById('reviewNmenotr').style.display='none';
+            }function showRM(){
+                document.getElementById('alumini').style.display='none';
+                document.getElementById('students').style.display='none';
+                document.getElementById('projectFellow').style.display='none';
+                document.getElementById('faculty').style.display='none';
+                document.getElementById('reviewNmentor').style.display='block';
+            }
+        </script>
+        <div class="flex gap-10 text-white items-center justify-center mx-auto text-3xl font-bold p-4 w-[83vw]">
+            <button href="" onclick="showAlumini()" class="border p-1 ">ALUMINI </button>
+            <button href="" onclick="showStudents()" class="border p-1">STUDENT </button>
+            <button href="" onclick="showProjectFellow()" class="border p-1">PROJECT FELLOW </button>
+            <button href="" onclick="showFaculty()" class="border p-1">FACULTY </button>
+            <button href="" onclick="showRM()" class="border p-1">REVIEW & MENTORS </button>
         </div>
-        {% endfor %}
+        <div class="h-[90vh] text-white w-2/3 mx-auto text-4xl">
+            <div class="" id="alumini" style="display: none;">
+                <div class="students-container overflow-y-scroll h-[60vh] border rounded-xl mx-auto">
+                    {% for student in site.students %}
+                    {% if student.who == 'alumini'%}
+                    <div class="student flex p-5 items-center h-[20vh]">
+                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="student-name text-4xl text-[#fcc000] font-bold">{{ student.name }}</p>
+                            <p class="student-role text-xl">{{ student.role }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="" id="students" style="display: block;">
+                <div class="students-container overflow-y-scroll h-[60vh] border rounded-xl mx-auto">
+                    {% for student in site.students %}
+                    {% if student.who == 'student'%}
+                    <div class="student flex p-5 items-center h-[20vh]">
+                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="student-name text-4xl text-[#fcc000] font-bold transform">{{ student.name }}</p>
+                            <p class="student-role text-xl">{{ student.role }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="" id="projectFellow" style="display: none;">
+                <div class="students-container overflow-y-scroll h-[60vh] border rounded-xl mx-auto">
+                    {% for student in site.students %}
+                    {% if student.who == 'pf'%}
+                    <div class="student flex p-5 items-center h-[20vh]">
+                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="student-name text-4xl text-[#fcc000] font-bold">{{ student.name }}</p>
+                            <p class="student-role text-xl">{{ student.role }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="" id="faculty" style="display: none;">
+                <div class="students-container overflow-y-scroll h-[60vh] border rounded-xl mx-auto">
+                    {% for student in site.students %}
+                    {% if student.who == 'faculty'%}
+                    <div class="student flex p-5 items-center h-[20vh]">
+                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="student-name text-4xl text-[#fcc000] font-bold">{{ student.name }}</p>
+                            <p class="student-role text-xl">{{ student.role }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="" id="reviewNmentor" style="display: none;">
+                <div class="students-container overflow-y-scroll h-[60vh] border rounded-xl mx-auto">
+                    {% for student in site.students %}
+                    {% if student.who == 'rnm'%}
+                    <div class="student flex p-5 items-center h-[20vh]">
+                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="student-name text-4xl text-[#fcc000] font-bold">{{ student.name }}</p>
+                            <p class="student-role text-xl">{{ student.role }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
     </div>
+    <h2>Students</h2>
+
 </section>
