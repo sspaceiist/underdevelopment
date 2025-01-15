@@ -1,6 +1,6 @@
 ---
-name: Yoga Hariharan
-role: Project Manager
+name: Yasir M
+role: Structures, Sys. Eng
 who : pf
 picurl : /image/team_grace/neelanshu.jpg
 ---

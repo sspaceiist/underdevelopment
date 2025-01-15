@@ -6,28 +6,28 @@
                 document.getElementById('students').style.display='none';
                 document.getElementById('projectFellow').style.display='none';
                 document.getElementById('faculty').style.display='none';
-                document.getElementById('reviewNmenotr').style.display='none';
+                document.getElementById('reviewNmentor').style.display='none';
             }
             function showStudents(){
                 document.getElementById('alumini').style.display='none';
                 document.getElementById('students').style.display='block';
                 document.getElementById('projectFellow').style.display='none';
                 document.getElementById('faculty').style.display='none';
-                document.getElementById('reviewNmenotr').style.display='none';
+                document.getElementById('reviewNmentor').style.display='none';
             }
             function showProjectFellow(){
                 document.getElementById('alumini').style.display='none';
                 document.getElementById('students').style.display='none';
                 document.getElementById('projectFellow').style.display='block';
                 document.getElementById('faculty').style.display='none';
-                document.getElementById('reviewNmenotr').style.display='none';
+                document.getElementById('reviewNmentor').style.display='none';
             }
             function showFaculty(){
                 document.getElementById('alumini').style.display='none';
                 document.getElementById('students').style.display='none';
                 document.getElementById('projectFellow').style.display='none';
                 document.getElementById('faculty').style.display='block';
-                document.getElementById('reviewNmenotr').style.display='none';
+                document.getElementById('reviewNmentor').style.display='none';
             }function showRM(){
                 document.getElementById('alumini').style.display='none';
                 document.getElementById('students').style.display='none';
@@ -52,7 +52,7 @@
                         <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
                             <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
                             <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
                             <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
@@ -106,7 +106,21 @@
                         <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endif %}
+                    {% endfor %}
+                    <h1 class="text-4xl p-5">Supporting Faculty : </h1>
+                    {% for student in site.students %}
+                    {% if student.who == 'sfaculty'%}
+                    <div class="student flex p-5 items-center h-[20vh]">
+                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
                             <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
@@ -124,7 +138,7 @@
                         <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
                             <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
