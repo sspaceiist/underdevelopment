@@ -2,5 +2,5 @@
 name: Immanuel Raja 
 role: Communication Systems
 who : faculty
-picurl : /image/team_grace/neelanshu.jpg
+picurl : /image/team_grace/immanuel raja.jpg
 ---

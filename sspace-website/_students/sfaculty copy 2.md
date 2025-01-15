@@ -2,5 +2,5 @@
 name: Chinmoy Saha
 role: Antenna
 who : sfaculty
-picurl : /image/team_grace/neelanshu.jpg
+picurl : /image/team_grace/chinmoy saha.png
 ---
