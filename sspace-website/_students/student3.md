@@ -1,4 +1,6 @@
 ---
-name: Soham Mali
+name: SOHAM MALI
 role: Science
+who : student
+picurl: /image/team_grace/neelanshu.jpg
 ---
