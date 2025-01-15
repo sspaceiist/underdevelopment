@@ -2,5 +2,5 @@
 name: Srinidhi Gonahal
 role: FSW
 who : alumini
-picurl : image_view.php
+picurl : /image/team_grace/image_view.php
 ---
