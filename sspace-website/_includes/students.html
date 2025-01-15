@@ -36,7 +36,7 @@
                 document.getElementById('reviewNmentor').style.display='block';
             }
         </script>
-        <div class="flex gap-10 text-white items-center justify-center mx-auto text-3xl font-bold p-4 w-[83vw]">
+        <div class="flex gap-2 lg:gap-10 text-white items-center justify-center mx-auto text-sm lg:text-3xl lg:font-bold p-4 w-[83%]">
             <button href="" onclick="showAlumini()" class="border p-1 rounded-lg ">ALUMINI </button>
             <button href="" onclick="showStudents()" class="border p-1 rounded-lg ">STUDENT </button>
             <button href="" onclick="showProjectFellow()" class="border p-1 rounded-lg ">PROJECT FELLOW </button>
@@ -49,11 +49,11 @@
                     {% for student in site.students %}
                     {% if student.who == 'alumini'%}
                     <div class="student flex p-5 items-center h-[20vh]">
-                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        <div class="m-5 h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
-                            <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
+                            <p class="student-name text-lg lg:text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-role text-sm lg:text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
                     <hr>
@@ -67,11 +67,11 @@
                     {% for student in site.students %}
                     {% if student.who == 'student'%}
                     <div class="student flex p-5 items-center h-[20vh]">
-                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        <div class="m-5 h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
-                            <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
+                            <p class="student-name text-lg lg:text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-role text-sm lg:text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
                     <hr>
@@ -85,11 +85,11 @@
                     {% for student in site.students %}
                     {% if student.who == 'pf'%}
                     <div class="student flex p-5 items-center h-[20vh]">
-                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        <div class="m-5 h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
-                            <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
+                            <p class="student-name text-lg lg:text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-role text-sm lg:text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
                     <hr>
@@ -103,11 +103,11 @@
                     {% for student in site.students %}
                     {% if student.who == 'faculty'%}
                     <div class="student flex p-5 items-center h-[20vh]">
-                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        <div class="m-5 h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
-                            <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
+                            <p class="student-name text-lg lg:text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-role text-sm lg:text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
                     <hr>
@@ -117,11 +117,11 @@
                     {% for student in site.students %}
                     {% if student.who == 'sfaculty'%}
                     <div class="student flex p-5 items-center h-[20vh]">
-                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        <div class="m-5 h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
-                            <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
+                            <p class="student-name text-lg lg:text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-role text-sm lg:text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
                     <hr>
@@ -135,11 +135,11 @@
                     {% for student in site.students %}
                     {% if student.who == 'rnm'%}
                     <div class="student flex p-5 items-center h-[20vh]">
-                        <div class="m-5 h-[100px] w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
+                        <div class="m-5 h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] flex items-center justify-center bg-[url({{student.picurl}})] bg-cover bg-center rounded-full">
                         </div>
                         <div class="flex flex-col">
-                            <p class="student-name text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
-                            <p class="student-role text-xl" style="font-style: italic;">{{ student.role }}</p>
+                            <p class="student-name text-lg lg:text-6xl text-[#fcc000] uppercase font-bold" style="font-weight: 700; font-style: italic;">{{ student.name }}</p>
+                            <p class="student-role text-sm lg:text-xl" style="font-style: italic;">{{ student.role }}</p>
                         </div>
                     </div>
                     <hr>

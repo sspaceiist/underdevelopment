@@ -16,24 +16,50 @@
 
 
 <body class="bg-[url('{{site.url}}/image/background.jpg')] bg-cover bg-fixed bg-center h-screen">
-    
+
     {% include navbar.html %}
     <div class="h-[20vh]">h</div>
-    <div class="h-[80vh]  text-white justify-center items-center">
+    <div class="h-[55vh]  text-white justify-center items-center block lg:hidden">
+        
+        <img src="{{site.url}}/image/gracehead.png" class="w-full" alt="">
+        <div class="grid grid-cols-[60vw_30vw] px-4  justify-center items-center h-full">
+            
+            <div class="flex flex-col p-6 pt-16 my-auto">
+                <div class="flex flex-col justify-center w-full p-2 lg:p-8 px-2 lg:px-8 gap-3">
+                    <a href="#"
+                        class="text-xl lg:text-4xl pb-3 pl-2 lg:pl-4 transition-all font-bold hover:text-2xl lg:hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Timeline</a>
+                    <a href="#objss"
+                        class="text-xl lg:text-4xl pb-3 pl-2 lg:pl-4 transition-all font-bold hover:text-2xl lg:hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Objectives</a>
+                    <a href="#teammm"
+                        class="text-xl lg:text-4xl pb-3 pl-2 lg:pl-4 transition-all font-bold hover:text-2xl lg:hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Team</a>
+                    <a href="#"
+                        class="text-xl lg:text-4xl pb-3 pl-2 lg:pl-4 transition-all font-bold hover:text-2xl lg:hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Gallery</a>
+                    <a href="#"
+                        class="text-xl lg:text-4xl pb-3 pl-2 lg:pl-4 transition-all font-bold hover:text-2xl lg:hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Data</a>
+
+                </div>
+            </div>
+            <div class="w-full mt-auto h-full pt-16">
+                <img src="{{site.url}}/image/grace.png" alt="" class="pt-16 mt-auto">
+
+            </div>
+        </div>
+    </div>
+    <div class="h-[80vh]  text-white justify-center items-center hidden lg:block">
         <div class="grid grid-cols-[60vw_30vw] px-4 h-full justify-center items-center">
             <div class="flex flex-col p-6 pt-0">
                 <img src="{{site.url}}/image/gracehead.png" alt="">
-                <div class="flex flex-col justify-center w-full p-8 px-8 gap-3">
+                <div class="flex flex-col justify-center w-full p-2 lg:p-8 px-2 lg:px-8 gap-3">
                     <a href="#"
-                        class="text-4xl pb-3 pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Timeline</a>
+                        class="text-xl lg:text-4xl pb-3 lg:pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Timeline</a>
                     <a href="#objss"
-                        class="text-4xl pb-3 pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Objectives</a>
+                        class="text-xl lg:text-4xl pb-3 lg:pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Objectives</a>
                     <a href="#teammm"
-                        class="text-4xl pb-3 pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Team</a>
+                        class="text-xl lg:text-4xl pb-3 lg:pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Team</a>
                     <a href="#"
-                        class="text-4xl pb-3 pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Gallery</a>
+                        class="text-xl lg:text-4xl pb-3 lg:pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Gallery</a>
                     <a href="#"
-                        class="text-4xl pb-3 pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Data</a>
+                        class="text-xl lg:text-4xl pb-3 lg:pl-4 transition-all font-bold hover:text-6xl hover:text-black bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_100%] bg-no-repeat transition-all duration-700 ease-in-out hover:bg-[length:100%_100%]">Data</a>
 
                 </div>
             </div>
@@ -43,11 +69,11 @@
             </div>
         </div>
     </div>
-    <div class="flex h-[70vh] items-center justify-center">
+    <div class="flex h-[60vh] lg:h-[70vh] items-center justify-center">
         <img src="{{site.url}}/image/about.png" alt="" class="mx-auto w-[85%]">
     </div>
     <div class="h-[10vh]" id="objss"></div>
-    <div class="h-[85vh] px-[9%]">
+    <div class="h-[85vh] px-[9%] hidden lg:block">
         <div class="flex flex-col h-full">
             <div class="flex w-full h-1/2 mb-2">
                 <div class="w-1/2 bg-red-500 mr-1 relative group">
@@ -103,12 +129,72 @@
             </div>
         </div>
     </div>
-    
+
+
+    <div class="h-[110vh] px-[9%] block lg:hidden">
+        <div class="flex flex-col h-full">
+            <div class="flex w-full h-1/2 mb-2">
+                <div class="w-full bg-red-500 mr-1 relative group">
+                    <div class="relative overflow-hidden w-full h-full">
+                        <div style="font-family: 'montserrat', sans-serif;font-weight: 900;"
+                            src="{{site.url}}/image/obj_cover1.jpg" alt="Image 1"
+                            class="absolute inset-0 w-full h-full object-cover bg-[#ffc000] flex flex-col items-center justify-center">
+                            <h1 class="text-3xl">OBJECTIVE 1</h1>
+                            <h1 class="text-xl">{{page.obj1}}</h1>
+                        </div>
+                        <img src="{{site.url}}/image/obj1.jpg" alt="Image 2"
+                            class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0" />
+                    </div>
+                </div>
+            </div>
+            <div class="flex w-full h-1/2 mb-2">
+                <div class="w-full bg-red-500 mr-1 relative group">
+                    <div class="relative overflow-hidden w-full h-full">
+                        <div style="font-family: 'montserrat', sans-serif;font-weight: 900;"
+                            src="{{site.url}}/image/obj_cover1.jpg" alt="Image 1"
+                            class="absolute inset-0 w-full h-full object-cover bg-[#ffc000] flex flex-col items-center justify-center">
+                            <h1 class="text-3xl">OBJECTIVE 2</h1>
+                            <h1 class="text-xl">{{page.obj2}}</h1>
+                        </div>
+                        <img src="{{site.url}}/image/obj2.jpg" alt="Image 2"
+                            class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0" />
+                    </div>
+                </div>
+            </div>
+            <div class="flex w-full h-1/2 mb-2">
+                <div class="w-full bg-red-500 mr-1 relative group">
+                    <div class="relative overflow-hidden w-full h-full">
+                        <div style="font-family: 'montserrat', sans-serif;font-weight: 900;"
+                            src="{{site.url}}/image/obj_cover1.jpg" alt="Image 1"
+                            class="absolute inset-0 w-full h-full object-cover bg-[#ffc000] flex flex-col items-center justify-center">
+                            <h1 class="text-3xl">OBJECTIVE 3</h1>
+                            <h1 class="text-xl">{{page.obj3}}</h1>
+                        </div>
+                        <img src="{{site.url}}/image/obj3.jpg" alt="Image 3"
+                            class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0" />
+                    </div>
+                </div>
+            </div>
+            <div class="flex w-full h-1/2 mb-2">
+                <div class="w-full bg-red-500 mr-1 relative group">
+                    <div class="relative overflow-hidden w-full h-full">
+                        <div style="font-family: 'montserrat', sans-serif;font-weight: 900;"
+                            src="{{site.url}}/image/obj_cover1.jpg" alt="Image 1"
+                            class="absolute inset-0 w-full h-full object-cover bg-[#ffc000] flex flex-col items-center justify-center">
+                            <h1 class="text-3xl">OBJECTIVE 4</h1>
+                            <h1 class="text-xl">{{page.obj4}}</h1>
+                        </div>
+                        <img src="{{site.url}}/image/obj4.jpg" alt="Image 4"
+                            class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% include students.html %}
-    {% include 3dmodel.html %}
     {% include footer.html %}
 
-    {% include timeline.html %}
 </body>
 
 </html>
