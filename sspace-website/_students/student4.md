@@ -2,5 +2,5 @@
 name: ANTONY ARUPARA
 role: Science
 who : student
-picurl: antony.php
+picurl: /image/team_grace/antony.php
 ---
