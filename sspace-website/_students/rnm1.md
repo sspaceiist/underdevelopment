@@ -1,6 +1,6 @@
 ---
-name: Harish C S
-role: CTO, SDRT
+name: CTO, SDRT
+role: 
 who : rnm
-picurl : /image/team_grace/neelanshu.jpg
+picurl : /image/team_grace/
 ---

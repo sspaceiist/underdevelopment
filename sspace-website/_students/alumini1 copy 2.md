@@ -2,5 +2,5 @@
 name: Arosish Priyadarshan
 role: PIS
 who : alumini
-picurl : image_view.jpg
+picurl : image/team_grace/arosish.jpg
 ---

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ywx0zsk.css">
+</head>
+
+<body class="bg-[url('{{site.url}}/image/background.jpg')] bg-cover bg-fixed bg-center">
+    {% include navbar.html %}
+    <div class="h-[13vh]"></div>
+    <div class="w-[90vw] grid grid-cols-2 lg:grid-cols-3 lg:w-[60vw] lg:gap-16 mx-auto text-white gap-y-10 py-8 lg:p-12">
+        <div class="flex flex-col w-[30vw] lg:w-[20vw] items-center justify-center mx-auto">
+            <div class="bg-[url('{{site.url}}/image/team/abhishek.php')] bg-center bg-cover  w-[20vw] h-[20vw] lg:w-[12vw] lg:h-[12vw]"></div>
+            <h1 class="text-sm lg:text-2xl font-bold">ABHISHEK VERMA</h1>
+            <h1 class="text-xs">LEAD WEB DEVELOPER</h1>
+        </div>
+        <div class="flex flex-col w-[30vw] lg:w-[20vw] items-center justify-center mx-auto">
+            <div class="bg-[url('{{site.url}}/image/team/kurma.png')] w-[20vw] h-[20vw]  hover:bg-[url('{{site.url}}/image/team/chillguy.png')] bg-center bg-cover  lg:w-[12vw] lg:h-[12vw]"></div>
+            <h1 class="text-sm lg:text-2xl font-bold">KURMANANDA</h1>
+            <h1 class="text-xs">LEAD WEB DEVELOPER</h1>
+        </div>
+        <div class="flex flex-col w-[30vw] lg:w-[20vw] items-center justify-center mx-auto">
+            <div class="bg-[url('{{site.url}}/image/team/nish.jpg')]  w-[20vw] h-[20vw] hover:bg-[url('{{site.url}}/image/team/chillguy.png')] bg-center bg-cover  lg:w-[12vw] lg:h-[12vw]"></div>
+            <h1 class="text-sm lg:text-2xl font-bold">NISH KALAN</h1>
+            <h1 class="text-xs">UI/UX DESIGNER</h1>
+        </div>
+        <div class="flex flex-col w-[30vw] lg:w-[20vw] items-center justify-center mx-auto">
+            <div class="bg-[url('{{site.url}}/image/team/komal.png')]  w-[20vw] h-[20vw] bg-center bg-cover  lg:w-[12vw] lg:h-[12vw]"></div>
+            <h1 class="text-sm lg:text-2xl font-bold">KOMAL MURMU</h1>
+            <h1 class="text-xs">CONTENT WRITER</h1>
+        </div>
+        <div class="flex flex-col w-[30vw] lg:w-[20vw] items-center justify-center mx-auto">
+            <div class="bg-[url('{{site.url}}/image/team/poonam.jpg')]  w-[20vw] h-[20vw] bg-center bg-cover  lg:w-[12vw] lg:h-[12vw]"></div>
+            <h1 class="text-xs lg:text-2xl font-bold ">POONAM SACHDEV</h1>
+            <h1 class="text-xs">WEB DEVELOPER</h1>
+        </div>
+    </div>
+    {% include footer.html %}
+</body>
+
+</html>

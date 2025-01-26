@@ -1,6 +1,6 @@
 ---
 name: Dean ( R&D)
-role: Registrar, IIST
+role: 
 who : rnm
-picurl : /image/team_grace/neelanshu.jpg
+picurl : /image/team_grace/
 ---

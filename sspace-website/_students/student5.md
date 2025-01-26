@@ -1,6 +1,6 @@
 ---
-name: DIWAKAR K
+name: DHIVAKAR K
 role: IMU calibration
 who : student
-picurl : /image/team_grace/neelanshu.jpg
+picurl : /image/team_grace/dhivakar.png
 ---
